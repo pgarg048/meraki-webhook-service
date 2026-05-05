@@ -1,0 +1,25 @@
+def normalize_meraki_events(payload):
+    return {
+        "event_type": payload.get("alertType"),
+        "event_type_id": payload.get("alertTypeId"),
+        "organization_id": payload.get("organizationId"),
+        "organization_name": payload.get("organizationName"),
+        "organization_url": payload.get("organizationUrl"),
+        "network_id": payload.get("networkId"),
+        "network_name": payload.get("networkName"),
+        "network_url": payload.get("networkUrl"),
+        "device_serial": payload.get("deviceSerial"),
+        "device_mac": payload.get("deviceMac"),
+        "device_name": payload.get("deviceName"),
+        "device_url": payload.get("deviceUrl"),
+        "device_tags": payload.get("deviceTags", []),
+        "device_model": payload.get("deviceModel"),
+        "alert_id": payload.get("alertId"),
+        "alert_level": payload.get("alertLevel"),
+        "occurred_at": payload.get("occurredAt"),
+        "alert_data": payload.get("alertData"),
+        "shared_secret": payload.get("sharedSecret"),
+        "sent_at": payload.get("sentAt"),
+        "notes": payload.get("notes"),
+        "product_types": payload.get("productTypes", [])
+    }
